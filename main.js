@@ -4,10 +4,25 @@ window.onload = function() {
     var ENTER = 13;
     var FIRE_KEY = 96;
 
-    var player = new Player()
+    
+    var board = new Board();
+    var player = new Player();
+    var balloon = new Balloon(Math.random()*this.width, 175, 30, 3, 4.5);
+
     
 
-    player.drawPlayer()
+
+
+    function AnimationLoop() {
+         board.drawBoard();
+         player.drawPlayer();
+         player.moves();
+         balloon.draw();
+         requestAnimationFrame(AnimationLoop);
+    }
+
+    AnimationLoop();
+
     
  document.body.addEventListener('keydown', function(e){
     if(e.keyCode === 13){
@@ -22,7 +37,7 @@ document.body.addEventListener('keydown', function(e){
      
     }
     if(e.keyCode === 96){
-      harpoonFire();
+      harpoonFire(e);
     }
 });
 

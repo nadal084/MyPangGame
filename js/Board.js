@@ -1,8 +1,8 @@
 function Board(){
     this.x = 0;
     this.y = 0;
-    this.width = canvas.width;
-    this.height = canvas.height;
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
     this.img = new Image();
    
     this.score = 0;

@@ -1,16 +1,10 @@
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext("2d");
-//canvas.width = 800;
-//canvas.height = 550;
-
 var playerArray = [];
 var playerposition ;
 
-   
     function Player() {
-    this.x = 100;
+    this.x = window.innerWidth / 2;
     this.dx = 5;
-    this.y = 100;
+    this.y = 0;
     this.width = 35;
     this.height = 35;
     this.lives = 3;
@@ -19,7 +13,7 @@ var playerposition ;
 
     Player.prototype.drawPlayer = function() {
       this.image.src = "imgs/pangFire.png";
-     ctx.fillRect(this.x,this.y,this.width,this.height);
+     // ctx.fillRect(this.x,this.y,this.width,this.height);
 
       ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
 

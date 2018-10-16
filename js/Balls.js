@@ -1,51 +1,49 @@
+var canvas = document.querySelector("portrait");
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+var ctx = canvas.getContext("2d");
+ 
  var ball;
  var ballsArray = [];
  var gravity = 1;
  var friction = 0.745;
 
- function Balloon(x,y,radius,dx, dy) { //funcion constructor de bola
-     this.x= x;
+ function Balloon(x, y, radius, dx, dy) { //funcion constructor de bola
+     this.x = x;
      this.y = y;
      this.dx = dx;
      this.dy = dy;
      this.radius = radius;
- }
 
-   this.update = function() {
-       if( this.y + this.radius < this.canvas.height){
-           this.dy = -this.dy;
-       }else { this.y = this.gravity * this.friction;
+    }
+    Balloon.prototype.draw = function(){
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.dx, this.dy, this.radius, 0, Math.PI * 2,false);
+    ctx.strokeStyle = 'red';
+    ctx.strokeFill();
+    ctx.fill();
+    }
 
-        if ( this.x - this.radius < 0 || this.x + this.radius > this.canvas.width){
-            this.dx = - this.dx;
+    Balloon.prototype.updateBall = function(){
+        if(this.x + this.radius > this.width || this.x - this.radius < 0){
+            this.dx = -this.dx;
         }
-               
-
-       }
-   }
-
-   this.draw();
-
- 
- 
-   this.draw = function() {
-   ctx.img.src = "imgs/bigBall.png"
-   ctx.drawImage(this.img,this.x, this.y, this.dx, this.dy);
-   }
- 
- 
+        if (this.y + this.radius > this.height +150 || this.y - this.radius < 0){
+            this.dy = -this.dy;
+        }
+        this.x += this.dx;
+        this.y += this.dy;
+        this.draw();
+    }
 
 
- //implementation-->> should be on the main,¿maybe?
- function init() {
-  this.ball = new Balloon(170,250, 30, 4, 1.3 ); 
-}
-  
- //animation
-   function animate() {
-      requestAnimationFrame(animate);
-      ctx.clearRect(0,0, canvas.width,canvas.height);
+    var balloon = new Balloon(Math.random()*this.width, 175, 30, 3, 4.5);
 
 
-   }
-  
+    function animateBall() {
+        requestAnimationFrame(animateBall);
+        ctx.clearRect(0, 0, innerWidth, innerHeight);
+        balloon.update();
+    }
+
+   
