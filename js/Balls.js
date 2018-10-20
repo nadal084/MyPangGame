@@ -1,4 +1,4 @@
- var ball;
+ /*var ball;
  var ballsArray = [];
  var gravity = 1;
  var friction = 0.745;
@@ -40,5 +40,5 @@
         ctx.clearRect(0, 0, innerWidth, innerHeight);
         balloon.update();
     }
-
+*/
    

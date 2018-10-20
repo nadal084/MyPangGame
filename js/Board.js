@@ -16,6 +16,6 @@ function Board(){
 
 Board.prototype.drawBoard = function() {
     this.img.src = "imgs/background1.png";
-    ctx.drawImage(this.img, this.width, this.height);
+    ctx.drawImage(this.img,0, 0, canvas.width, canvas.height);
     
 }

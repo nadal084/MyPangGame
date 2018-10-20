@@ -1,12 +1,12 @@
   var playerpositionX =[] ;
 
 
-    function Player() {
-    this.x = window.innerWidth / 2;
-    this.dx = 5;
-    this.y = 0;
-    this.width = 35;
-    this.height = 35;
+    function Player(x,y) {
+    this.x = x;
+    this.dx = 10;
+    this.y = y; //canvas.height -80
+    this.width = 50;
+    this.height = 50;
     this.lives = 3;
     this.image = new Image();
     };
@@ -20,26 +20,22 @@
     };
 
     Player.prototype.movesLeft = function(e) {
-      
+      console.log(e.keyCode);
       
       if( e.keyCode === 37){
-        this.dx -= 10;
+        this.x -= this.dx;
+        console.log(this.x + " , " + this.y);
       }
+      //this.x = Math.min((0) + this.width , Math.max(canvas.width )-this.width);
+      //this.y = Math.min((0) + this.height, Math.max(canvas.height )-this.height);
+    }
 
       Player.prototype.movesRight = function(e) {
       if ( e.keyCode === 39){
-        this.dx += 10;
+        this.x += this.dx;
       }
-      this.x = Math.min((0) + this.width , Math.max(canvas.width )-this.width);
-      this.y = Math.min((0) + this.height, Math.max(canvas.height )-this.height);
-    };
     
-     Player.prototype.CollisionBallPlayer = function(){}
-
-     
-     
-    
-     function animate(){
-
-     }
+    //this.x = Math.min((0) + this.width , Math.max(canvas.width )-this.width);
+    //this.y = Math.min((0) + this.height, Math.max(canvas.height )-this.height);
+  };
 

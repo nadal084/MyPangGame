@@ -1,12 +1,12 @@
-var harpoonsArray = [];
+/*var harpoonsArray = [];
 
- function Harpoon(playerpositionX ,y, speed) {
-     this.x = playerpositionX;
+ function Harpoon(x ,y, speed) {
+     this.x = x;
      this.y = y;
      this.speed = speed;
  }
  
-  harpoon.prototype.drawHarpoon = function(x, y) {
+   Harpoon.prototype.drawHarpoon = function() {
           ctx.beginpath();
           ctx.fillStyle = "rgba(44, 133, 240)";
           ctx.fillRect(this.x, this.y, 20,20);
@@ -14,6 +14,7 @@ var harpoonsArray = [];
           this.y += 3.5;
           
       }
+    
     
     Harpoon.prototype.updateHarpoon = function(){
         if(this.y > canvas.height){
@@ -43,7 +44,7 @@ var harpoonsArray = [];
 
  Harpoon.prototype.harpoonCollisionBall = function(){
 
- }
+ }*/
 
  
 
