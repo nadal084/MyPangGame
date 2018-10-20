@@ -39,3 +39,15 @@
     //this.y = Math.min((0) + this.height, Math.max(canvas.height )-this.height);
   };
 
+    Player.prototype.updatePlayer = function() {
+      if(this.x + this.width > canvas.width || this.x - 50 < 0){
+        this.dx = -this.dx;
+        
+      }else{
+       
+      }
+     
+      
+      this.drawPlayer();
+    }
+
