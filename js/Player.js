@@ -1,5 +1,5 @@
-var playerArray = [];
-var playerposition ;
+  var playerpositionX =[] ;
+
 
     function Player() {
     this.x = window.innerWidth / 2;
@@ -19,13 +19,16 @@ var playerposition ;
 
     };
 
-    Player.prototype.moves = function(e) {
-      console.log(e.keyCode);
+    Player.prototype.movesLeft = function(e) {
+      
+      
       if( e.keyCode === 37){
-        this.x -= this.dx;
+        this.dx -= 10;
       }
+
+      Player.prototype.movesRight = function(e) {
       if ( e.keyCode === 39){
-        this.x += this.dx;
+        this.dx += 10;
       }
       this.x = Math.min((0) + this.width , Math.max(canvas.width )-this.width);
       this.y = Math.min((0) + this.height, Math.max(canvas.height )-this.height);

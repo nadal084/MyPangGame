@@ -1,8 +1,3 @@
-var canvas = document.querySelector("portrait");
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-var ctx = canvas.getContext("2d");
- 
  var ball;
  var ballsArray = [];
  var gravity = 1;
@@ -20,7 +15,7 @@ var ctx = canvas.getContext("2d");
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.dx, this.dy, this.radius, 0, Math.PI * 2,false);
     ctx.strokeStyle = 'red';
-    ctx.strokeFill();
+    ctx.stroke();
     ctx.fill();
     }
 

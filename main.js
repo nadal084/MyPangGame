@@ -1,13 +1,37 @@
-window.onload = function() {
-    var LEFT_KEY = 37;
-    var RIGHT_KEY = 39;
-    var ENTER = 13;
-    var FIRE_KEY = 96;
+var canvas = document.getElementById("portrait");
+canvas.width = window.innerWidth -10;
+canvas.height = window.innerHeight -10;
+var ctx = canvas.getContext("2d");
+
+
+window.onload = function(e){
+    console.log(e.keyCode);
+    document.onkeydown = function(e) {
+        if(e.keyCode === 13)
+        startgame();
+    }
+
+document.onkeydown = function(e) {
+    switch(e.keyCode) {
+      case 37:
+      moveLeft();
+      break;
+      case 39:
+      moveRight();
+      break;
+      case 96:
+      harpoonFire();
+    }
+  }
+        
+        
+        
+
 
     
     var board = new Board();
     var player = new Player();
-    var balloon = new Balloon(Math.random()*this.width, 175, 30, 3, 4.5);
+    //var balloon = new Balloon(Math.random()*this.width, 175, 30, 3, 4.5);
 
     
 
@@ -18,62 +42,11 @@ window.onload = function() {
          player.drawPlayer();
          player.moves();
          balloon.draw();
-         requestAnimationFrame(AnimationLoop);
+         balloon.updateBall();
+        window.requestAnimationFrame(AnimationLoop);
     }
 
     AnimationLoop();
 
     
- document.body.addEventListener('keydown', function(e){
-    if(e.keyCode === 13){
-        startGame();
-    };
- })    
-
-
-document.body.addEventListener('keydown', function(e){
-    if(e.keyCode === 39|| e.keyCode ===37){
-     player.moves(e); 
-     
-    }
-    if(e.keyCode === 96){
-      harpoonFire(e);
-    }
-});
-
-var keysPressed = {
-    left: false,
-    right: false,
-    fire: false,
-  };
-  
-  document.body.addEventListener('keydown', function(event){
-    switch (event.keyCode) {
-      case LEFT_KEY:
-        keysPressed.right = true;
-        break;
-      case RIGHT_KEY:
-        keysPressed.left = true;
-        break;
-      case FIRE_KEY:
-        keysPressed.fire = true;
-        break;
-    }
-})
-}
-
-
-
-   /*  window.onkeyup = function(event) {
-        switch( event.keyCode) {
-            case LEFT_KEY:
-            keysPressed.right = false;
-            break;
-            case RIGHT_KEY:
-            keysPressed.left = false;
-            break;
-            case FIRE_KEY:
-            keysPressed.fire = false;
-        }
-    } */
  

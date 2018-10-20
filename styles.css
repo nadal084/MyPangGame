@@ -1,9 +1,10 @@
 
  canvas {
     border : solid 1px;
+    background-image: image("./imgs/background1.png");
     
  }
  body{
      margin: 0px;
-     background-image: image("./imgs/background1.png");
+     
  }

@@ -1,8 +1,14 @@
+
+var canvas = document.getElementById("portrait");
+canvas.width = window.innerWidth -10;
+canvas.height = window.innerHeight -10;
+var ctx = canvas.getContext("2d");
+
 function Board(){
     this.x = 0;
     this.y = 0;
-    this.width = window.innerWidth;
-    this.height = window.innerHeight;
+    this.width = canvas.width;
+    this.height = canvas.height;
     this.img = new Image();
    
     this.score = 0;
