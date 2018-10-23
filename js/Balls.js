@@ -13,17 +13,14 @@
     }
     Balloon.prototype.draw = function(){
     ctx.beginPath();
-    console.log("Draw: radius"+this.radius)
-
-    ctx.arc(this.x, this.y, this.dx, this.dy, this.radius, Math.PI * 2);
-    
+    ctx.arc(this.x, this.y,this.radius,0, Math.PI * 2);
     ctx.strokeStyle = 'red';
     ctx.stroke();
     ctx.fill();
     }
 
     Balloon.prototype.updateBall = function(){
-        if(this.x + this.radius > canvas.width  || this.x + this.radius < 0){
+        if(this.x + this.radius > canvas.width  || this.x - this.radius < 0){
             this.dx = -this.dx;
             console.log("colision x-axis")
         }
@@ -31,9 +28,9 @@
             this.dy = -this.dy;
             console.log("colision y-axis")
         }
-        this.x += this.dx;
+        this.x += this.Math.sin(dx);
         this.y += this.dy;
-        if(this.radius <= 0) console.log("updateBall: radius"+this.radius)
+        if(this.radius >= canvas.width) console.log("updateBall: radius"+this.radius)
 
         this.draw();
     }
@@ -48,4 +45,7 @@
         balloon.updateBall();
    } */
 
+   function collisions(){
+
+   }
    
