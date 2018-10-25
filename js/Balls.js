@@ -14,21 +14,21 @@
     Balloon.prototype.draw = function(){
     ctx.beginPath();
     ctx.arc(this.x, this.y,this.radius,0, Math.PI * 2);
-    ctx.strokeStyle = 'red';
+    ctx.strokeStyle = 'rgba(255, 0, 0, 1)';
     ctx.stroke();
     ctx.fill();
     }
 
     Balloon.prototype.updateBall = function(){
-        if(this.x + this.radius > canvas.width  || this.x - this.radius < 0){
+        if(this.x + this.radius +35 > canvas.width  || this.x - this.radius -35 < 0){
             this.dx = -this.dx;
             console.log("colision x-axis")
         }
-        if (this.y + this.radius > canvas.height || this.y - this.radius < 0){
+        if (this.y + this.radius +35 > canvas.height || this.y - this.radius -35 < 0){
             this.dy = -this.dy;
             console.log("colision y-axis")
         }
-        this.x += this.Math.sin(dx);
+        this.x += this.dx;
         this.y += this.dy;
         if(this.radius >= canvas.width) console.log("updateBall: radius"+this.radius)
 
