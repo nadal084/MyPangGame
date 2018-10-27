@@ -4,12 +4,13 @@
     this.width = canvas.width;
     this.height = canvas.height;
     this.img = new Image();
+    this.previewImage = new Image();
     this.previewImage.src = "imgs/pang_1.png";
     this.imgGameover = new Image();
     this.imgGameover.src = "imgs/gameOver.png";
    }
 Board.prototype.start = function() {
-     AnimationLoop();
+    AnimationLoop();
 };
 
 Board.prototype.drawBoard = function() {
