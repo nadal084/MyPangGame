@@ -52,11 +52,9 @@ window.onload = function(e){
     }
     board.start();
     };
-    function startGame(){
-     gameStart = true;
-     ctx.
+    
 
-    }
+    
   
 
     
