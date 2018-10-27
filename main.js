@@ -10,12 +10,8 @@ var harpoons=[];
 
 
 window.onload = function(e){
-    /*console.log(e.keyCode);
-    document.onkeydown = function(e) {
-        if(e.keyCode === 13)
-        startgame();
-    }*/
-    //var keys = [];
+   
+   
      board = new Board();
      player = new Player(canvas.width/2, canvas.height-80);
      console.log(player.lives);
