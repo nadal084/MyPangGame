@@ -19,7 +19,7 @@
     ctx.fill();
     }
 
-    Balloon.prototype.updateBall = function(){
+    Balloon.prototype.updateBall = function(){ // condiciones de los limites internos.
         if(this.x + this.radius +35 > canvas.width  || this.x - this.radius -35 < 0){
             this.dx = -this.dx;
             console.log("colision x-axis")
@@ -30,22 +30,9 @@
         }
         this.x += this.dx;
         this.y += this.dy;
-        if(this.radius >= canvas.width) console.log("updateBall: radius"+this.radius)
+        if(this.radius >= canvas.width) console.log("updateBall: radius"+ this.radius)
 
         this.draw();
     }
 
-
- /*    var balloon = new Balloon(Math.random()*this.width, 175, 30, 3, 4.5);
-
-   
-   Balloon.prototype.animateBall = function() {
-        requestAnimationFrame(this.animateBall);
-        ctx.clearRect(0, 0, innerWidth, innerHeight);
-        balloon.updateBall();
-   } */
-
-   function collisions(){
-
-   }
    
